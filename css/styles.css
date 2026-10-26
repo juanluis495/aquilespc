@@ -1,0 +1,170 @@
+/* AquilesPC · aquilespc.cl
+   Layout: una sola columna de lectura (~42rem) sobre fondo ciruela; el hero cruza titular y la foto de Aquiles fundida al fondo.
+   Marca: ciruela casi negro, fucsia y blanco, como su logo. */
+:root{
+  --bg:#120413; --bg-2:#1B091B; --surface:#241025; --ink:#F8EEF4; --muted:#C9B3C3; --line:#3B2039;
+  --pink:#F0167F; --pink-2:#FF5AA8; --on-pink:#FFFFFF;
+  /* Degradado de los botones: un poco más profundo que --pink para que el texto blanco cumpla contraste AA (4,8:1 o más). */
+  --cta-1:#DB1276; --cta-2:#B80D62;
+  --display:"Poppins", "Avenir Next", system-ui, sans-serif;
+  --body:"Montserrat", "Segoe UI", system-ui, sans-serif;
+  --step-0:1.0625rem; --step-1:1.25rem; --step-2:clamp(1.5rem,4vw,2rem); --step-3:clamp(2.3rem,7vw,4.2rem);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:var(--step-0);line-height:1.65;overflow-wrap:break-word}
+h1,h2,h3{font-family:var(--display);line-height:1.08;text-wrap:balance;margin:0}
+h2{font-size:var(--step-2);font-weight:800;letter-spacing:-.015em}
+h3{font-size:var(--step-1);font-weight:700}
+p{margin:0}
+a{color:inherit}
+img{max-width:100%}
+picture{display:contents}
+strong,b{color:var(--ink)}
+:focus-visible{outline:3px solid var(--pink-2);outline-offset:3px;border-radius:4px}
+main:focus{outline:none}
+section[id]{scroll-margin-top:4rem}
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.read{max-width:42rem}
+section{padding-block:clamp(3rem,8vw,5.5rem)}
+.eyebrow{font-family:var(--body);font-size:.8rem;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:.8rem}
+.eyebrow::before{content:"";width:2.2rem;height:2px;background:var(--pink);flex:none}
+.stack{display:flex;flex-direction:column;gap:1rem}
+.pink{background:linear-gradient(90deg,var(--pink-2),var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent}
+.btn{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--display);font-weight:700;font-size:1.05rem;text-decoration:none;padding:.95rem 1.5rem;border-radius:999px;background:var(--cta-1);background:linear-gradient(90deg,var(--cta-1),var(--cta-2));color:var(--on-pink);box-shadow:0 10px 30px -10px var(--pink);transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn svg{width:1.25em;height:1.25em;flex:none}
+.btn.ghost{background:transparent;box-shadow:none;border:2px solid var(--line);color:var(--ink)}
+.btn.ghost:hover{border-color:var(--pink)}
+
+/* Saltar al contenido: invisible hasta que recibe foco con el teclado */
+.skip{position:absolute;left:16px;top:-100px;z-index:40;padding:.7rem 1.1rem;border-radius:8px;background:var(--ink);color:var(--bg);font-weight:600;text-decoration:none}
+.skip:focus{top:calc(12px + env(safe-area-inset-top,0px))}
+
+/* Pendientes: etiquetas amarillas. Ocultas salvo que js/main.js agregue la clase .ver-pendientes (ver AJUSTES.mostrarPendientes). */
+.todo{display:none;font-size:.8rem;background:#FFD23F;color:#1A1200;padding:.1rem .5rem;border-radius:4px;font-weight:700;font-family:var(--body);line-height:1.5;vertical-align:middle}
+.ver-pendientes .todo{display:inline-block}
+
+/* Barra superior */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(18,4,19,.92);background:color-mix(in srgb,var(--bg) 88%,transparent);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:21;background:var(--bg)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:.55rem}
+.brand{display:block;border-radius:4px}
+.brand img{height:46px;width:auto;display:block}
+.top nav{display:flex;gap:1.4rem;font-size:.92rem;font-weight:500}
+.top nav a{text-decoration:none;color:var(--muted)}
+.top nav a:hover{color:var(--ink)}
+@media (max-width:760px){.top nav{display:none}}
+
+/* Hero */
+.hero{position:relative;padding-block:0;overflow:hidden;background:var(--bg)}
+.hero .wrap{position:static;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;min-height:min(560px,80vh)}
+.hero .copy{position:relative;z-index:2;display:flex;flex-direction:column;gap:1.4rem;padding-block:3rem;min-width:0}
+.hero h1{font-size:var(--step-3);font-weight:800;letter-spacing:-.025em}
+.hero .role{font-size:var(--step-1);font-weight:500}
+.hero .lede{max-width:32rem;color:var(--muted)}
+.hero .meta{display:flex;flex-wrap:wrap;gap:.4rem 1.2rem;font-size:.9rem;color:var(--muted)}
+.hero .meta span{display:inline-flex;align-items:center;gap:.45rem}
+.hero .meta span::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--pink)}
+.hero .photo{position:absolute;right:0;top:0;bottom:0;width:54%;z-index:1}
+.hero .photo img{width:100%;height:100%;object-fit:cover;object-position:35% 20%;display:block;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 38%);mask-image:linear-gradient(90deg,transparent 0,#000 38%)}
+@media (max-width:760px){
+  .hero .wrap{grid-template-columns:1fr;min-height:0}
+  .hero .photo{position:relative;width:auto;height:340px;margin-inline:calc(-1 * max(16px,env(safe-area-inset-left,0px)))}
+  .hero .photo img{object-position:40% 15%;-webkit-mask-image:linear-gradient(180deg,#000 60%,transparent);mask-image:linear-gradient(180deg,#000 60%,transparent)}
+  .hero .copy{padding-block:0 3rem;margin-top:-3.5rem}
+}
+
+/* Quién soy */
+.story{background:var(--bg-2)}
+.story .lema{font-family:var(--display);font-weight:800;font-size:var(--step-2);line-height:1.15;letter-spacing:normal}
+.sign{font-family:var(--display);font-weight:700}
+.sign small{display:block;font-family:var(--body);font-weight:500;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--pink-2);margin-top:.2rem}
+.story p{color:var(--muted)}
+.story p.sign{color:var(--ink)}
+
+/* Enfoque */
+.pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem 2rem;margin-top:2.2rem}
+.pillars div{display:flex;flex-direction:column;gap:.4rem;border-top:2px solid var(--pink);padding-top:.9rem}
+.pillars p{color:var(--muted)}
+@media (max-width:900px){.pillars{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.pillars{grid-template-columns:1fr}}
+
+/* Para quién */
+.who{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:2rem}
+.who > div{min-width:0;display:flex;flex-direction:column;gap:.8rem;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:1.5rem}
+.who p{color:var(--muted)}
+.who ul{margin:0;padding-left:1.1rem;display:flex;flex-direction:column;gap:.35rem}
+.who li::marker{color:var(--pink)}
+.quote{margin-top:2.5rem;font-family:var(--display);font-size:var(--step-1);font-weight:700;max-width:42rem}
+@media (max-width:720px){.who{grid-template-columns:1fr}}
+
+/* Acompañamientos */
+#acompanamientos{background:var(--bg-2)}
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:2rem;align-items:start}
+.plan{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:1.5rem;display:flex;flex-direction:column;gap:.9rem;min-width:0}
+.plan.first{border:2px solid var(--pink);box-shadow:0 20px 50px -30px var(--pink)}
+.plan .tag{font-size:.72rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--pink-2)}
+.plan dl{display:grid;grid-template-columns:auto 1fr;gap:.3rem .9rem;margin:0;font-size:.93rem}
+.plan dt{color:var(--muted)}
+.plan dd{margin:0;font-weight:600}
+.plan p{font-size:.96rem;color:var(--muted)}
+.note{margin-top:1.5rem;font-size:.93rem;color:var(--muted);max-width:42rem}
+.lead{color:var(--muted)}
+@media (max-width:900px){.plans{grid-template-columns:1fr}}
+
+/* Reservar */
+.book{background:linear-gradient(135deg,#3A0827,var(--bg) 70%)}
+.steps{list-style:none;margin:2rem 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;counter-reset:s}
+.steps li{counter-increment:s;display:flex;flex-direction:column;gap:.5rem}
+.steps li::before{content:counter(s);font-family:var(--display);font-weight:800;font-size:2.6rem;line-height:1;color:var(--pink)}
+.steps p{color:var(--muted)}
+.rules{margin-top:2.5rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(14rem,100%),1fr));gap:.6rem 2rem;font-size:.93rem;color:var(--muted);border-top:1px solid var(--line);padding-top:1.5rem}
+@media (max-width:720px){.steps{grid-template-columns:1fr}}
+
+/* Formación */
+.cred{display:flex;flex-direction:column;gap:1rem;margin-top:1.5rem}
+.cred div{display:grid;grid-template-columns:8rem 1fr;gap:1rem;border-top:1px solid var(--line);padding-top:1rem}
+.cred b{font-family:var(--display);color:var(--pink-2)}
+.cred span{color:var(--muted);font-size:.9rem}
+@media (max-width:520px){.cred div{grid-template-columns:1fr;gap:.2rem}}
+
+/* FAQ */
+.faq{background:var(--bg-2)}
+.faq details{border-top:1px solid var(--line);padding-block:1rem}
+.faq details:last-child{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;font-family:var(--display);font-weight:600;font-size:1.08rem;list-style:none;display:flex;justify-content:space-between;gap:1rem}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--pink);font-size:1.5rem;line-height:1}
+.faq details[open] summary::after{content:"–"}
+.faq details p{margin-top:.6rem;color:var(--muted)}
+
+/* Ayuda inmediata */
+.help{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--ink);border-radius:12px;padding:1.5rem;display:flex;flex-direction:column;gap:.8rem}
+.help h2{font-size:var(--step-1);font-weight:700;letter-spacing:normal}
+.help p{color:var(--muted)}
+.help ul{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(11rem,100%),1fr));gap:.8rem;font-size:.93rem;color:var(--muted)}
+.help li b{display:block;font-family:var(--display);font-size:1.6rem;font-variant-numeric:tabular-nums}
+.help li a{text-decoration-thickness:2px;text-underline-offset:.2em;text-decoration-color:var(--pink)}
+
+/* Contacto / pie */
+.contact .row{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.5rem}
+.phone{font-family:var(--display);font-weight:800;font-size:var(--step-2);user-select:all}
+footer{border-top:1px solid var(--line);padding-block:2.5rem 6.5rem;font-size:.85rem;color:var(--muted)}
+footer .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.5rem}
+footer img{width:220px;height:auto;display:block}
+footer .fine{max-width:30rem;display:flex;flex-direction:column;gap:.4rem}
+
+/* Botón flotante en celular. Se esconde cuando el contacto o el pie están a la vista, para no taparlos. */
+.float{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:30;transition:transform .15s,opacity .2s,visibility .2s}
+.float.is-hidden{opacity:0;visibility:hidden;transform:translateY(12px)}
+@media (min-width:900px){.float{display:none}}
+@media (prefers-reduced-motion:reduce){.btn,.float{transition:none}.btn:hover,.float.is-hidden{transform:none}}
+
+/* Página 404 */
+.not-found{min-height:calc(100vh - 64px);min-height:calc(100svh - 64px);display:flex;align-items:center}
+.not-found .stack{gap:1.4rem}
+.not-found h1{font-size:var(--step-3);font-weight:800;letter-spacing:-.025em}
+.not-found p{color:var(--muted)}
