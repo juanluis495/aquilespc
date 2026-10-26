@@ -31,7 +31,9 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Montserrat:wght@400;500;600&display=swap">
+<!-- Fuentes de Google cargadas sin bloquear el primer dibujo de la página (mejora la velocidad en celular). -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Montserrat:wght@400;500;600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Montserrat:wght@400;500;600&display=swap"></noscript>
 <link rel="stylesheet" href="css/styles.css">
 <!-- Ajustes del sitio (Google Analytics, WhatsApp, pendientes): al comienzo de js/main.js -->
 <script src="js/main.js" defer></script>
@@ -165,8 +167,8 @@
     <div class="wrap">
       <div class="photo">
         <picture>
-          <source type="image/webp" srcset="img/aquiles-paredes-correa-360.webp 360w, img/aquiles-paredes-correa-480.webp 480w, img/aquiles-paredes-correa-660.webp 660w" sizes="(max-width: 760px) 100vw, 54vw">
-          <img src="img/aquiles-paredes-correa-660.jpg" srcset="img/aquiles-paredes-correa-360.jpg 360w, img/aquiles-paredes-correa-480.jpg 480w, img/aquiles-paredes-correa-660.jpg 660w" sizes="(max-width: 760px) 100vw, 54vw" alt="Aquiles Paredes Correa sentado en un sillón, sonriendo, en su espacio de trabajo" width="660" height="533" fetchpriority="high">
+          <source type="image/webp" srcset="img/aquiles-paredes-correa-360.webp 360w, img/aquiles-paredes-correa-480.webp 480w, img/aquiles-paredes-correa-660.webp 660w" sizes="(max-width: 760px) 100vw, 660px">
+          <img src="img/aquiles-paredes-correa-660.jpg" srcset="img/aquiles-paredes-correa-360.jpg 360w, img/aquiles-paredes-correa-480.jpg 480w, img/aquiles-paredes-correa-660.jpg 660w" sizes="(max-width: 760px) 100vw, 660px" alt="Aquiles Paredes Correa sentado en un sillón, sonriendo, en su espacio de trabajo" width="660" height="533" fetchpriority="high">
         </picture>
       </div>
       <div class="copy">

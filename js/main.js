@@ -58,9 +58,11 @@ var AJUSTES = {
     } catch (err) {}
   });
 
-  // Botón flotante: se esconde mientras el contacto o el pie están a la vista, para no taparlos.
+  // Botón flotante: se esconde mientras está a la vista el botón de la portada, el del contacto o el pie,
+  // para no duplicarlos ni taparlos.
   var flotante = document.querySelector('.float');
   if (flotante && 'IntersectionObserver' in window) {
+    flotante.classList.add('is-hidden');
     var visibles = [];
     var io = new IntersectionObserver(function (entradas) {
       entradas.forEach(function (en) {
@@ -70,6 +72,6 @@ var AJUSTES = {
       });
       flotante.classList.toggle('is-hidden', visibles.length > 0);
     });
-    Array.prototype.forEach.call(document.querySelectorAll('#contacto .row, footer'), function (el) { io.observe(el); });
+    Array.prototype.forEach.call(document.querySelectorAll('.hero .btn, #contacto .row, footer'), function (el) { io.observe(el); });
   }
 })();
