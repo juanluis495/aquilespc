@@ -43,8 +43,8 @@ section{padding-block:clamp(3rem,8vw,5.5rem)}
 .skip:focus{top:calc(12px + env(safe-area-inset-top,0px))}
 
 /* Pendientes: etiquetas amarillas. Ocultas salvo que js/main.js agregue la clase .ver-pendientes (ver AJUSTES.mostrarPendientes). */
-.todo{display:none;font-size:.8rem;background:#FFD23F;color:#1A1200;padding:.1rem .5rem;border-radius:4px;font-weight:700;font-family:var(--body);line-height:1.5;vertical-align:middle}
-.ver-pendientes .todo{display:inline-block}
+.todo{display:none}
+.ver-pendientes .todo{display:inline-block;font-size:.8rem;background:#FFD23F;color:#1A1200;padding:.1rem .5rem;border-radius:4px;font-weight:700;font-family:var(--body);line-height:1.5;vertical-align:middle}
 
 /* Barra superior */
 .top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(18,4,19,.92);background:color-mix(in srgb,var(--bg) 88%,transparent);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
