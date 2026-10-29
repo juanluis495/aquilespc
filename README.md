@@ -27,11 +27,26 @@ Para editar cualquier archivo: clic derecho → **Abrir con** → **Bloc de nota
 
 Haz doble clic en `index.html`. Se abre en tu navegador tal como se verá publicada.
 
-Mientras la revisas en tu computador vas a ver unas **etiquetas amarillas** («Por definir», «Confirmar respaldo»…). Marcan lo que falta completar. En **aquilespc.com no aparecen**; ver la sección 4.
+Mientras la revisas en tu computador vas a ver unas **etiquetas amarillas** («Por definir», «Confirmar respaldo»…). Marcan lo que falta completar. En **aquilespc.com no aparecen**; ver la sección 5.
 
 ---
 
-## 2. Publicar en Netlify
+## 2. Dónde está publicada hoy: GitHub Pages (provisorio)
+
+Mientras se habilita Netlify y el dominio, la página está publicada en:
+
+- **Página:** <https://juanluis495.github.io/aquilespc/>
+- **Repositorio (público):** <https://github.com/juanluis495/aquilespc>
+
+Cada cambio que se sube al repositorio se publica solo en esa dirección en 1 o 2 minutos. Ahí las etiquetas amarillas **sí se ven** (solo se ocultan en aquilespc.com). Si vas a compartir esa dirección con más personas, cambia `mostrarPendientes` a `'no'`; ver la sección 5.
+
+**Cambiar un texto sin instalar nada:** en el repositorio, abre el archivo (por ejemplo `index.html`), presiona el lápiz (**Edit this file**), haz el cambio y presiona **Commit changes**.
+
+**Al pasarla a Netlify:** usa la **opción B** de la sección 3 con este mismo repositorio. Cuando ya funcione en Netlify, apaga GitHub Pages para no tener dos copias: en el repositorio, **Settings → Pages → Unpublish site**.
+
+---
+
+## 3. Publicar en Netlify
 
 Netlify tiene un plan gratuito que alcanza de sobra para esta página. Crea una cuenta en <https://app.netlify.com/signup>.
 
@@ -56,7 +71,7 @@ Si la carpeta está en GitHub:
 
 ---
 
-## 3. Conectar el dominio aquilespc.com
+## 4. Conectar el dominio aquilespc.com
 
 Un dominio .com se compra en un registrador (por ejemplo GoDaddy, Namecheap, Cloudflare o Hostinger; NIC Chile solo vende dominios .cl). El registrador guarda **a qué servidores DNS apunta tu dominio**, y los registros (A, CNAME, TXT) se crean en esos servidores. Lo más simple es que los maneje Netlify.
 
@@ -96,7 +111,7 @@ Netlify muestra estos valores en **Domain management** al agregar el dominio. Si
 
 ---
 
-## 4. Dónde cambiar cada cosa
+## 5. Dónde cambiar cada cosa
 
 ### Ajustes de `js/main.js`
 
@@ -206,7 +221,7 @@ En «Cómo reservar» (`index.html`) hay un comentario `<!-- AGENDA: … -->` qu
 
 ---
 
-## 5. Dar de alta el sitio en Google Search Console
+## 6. Dar de alta el sitio en Google Search Console
 
 Search Console te muestra cómo aparece la página en Google y con qué búsquedas llegan las personas.
 
@@ -224,10 +239,11 @@ Google puede tardar desde unos días hasta un par de semanas en mostrar la pági
 
 ---
 
-## 6. Pendientes
+## 7. Pendientes
 
-- [ ] **Valores** de la sesión de orientación y de los planes de adicciones y codependencia. Por ahora dice «Consulta el valor por WhatsApp». → sección 4, *Valores de las sesiones*.
-- [ ] **Horario exacto** de atención. Por ahora solo dice «lunes a sábado». → sección 4, *Horario de atención*.
-- [ ] **Respaldo de la formación**: Técnico en Rehabilitación (IPLACEX, en curso) y Publicista (Universidad del Mar). Si no se confirma, ocultar la sección. → sección 4, *Sección Formación*.
-- [ ] **ID real de Google Analytics** (hoy `G-XXXXXXXXXX`). → sección 4, *ID de Google Analytics*.
-- [ ] Conectar el dominio aquilespc.com en Netlify y dar de alta el sitio en Search Console. → secciones 3 y 5.
+- [ ] **Valores** de la sesión de orientación y de los planes de adicciones y codependencia. Por ahora dice «Consulta el valor por WhatsApp». → sección 5, *Valores de las sesiones*.
+- [ ] **Horario exacto** de atención. Por ahora solo dice «lunes a sábado». → sección 5, *Horario de atención*.
+- [ ] **Respaldo de la formación**: Técnico en Rehabilitación (IPLACEX, en curso) y Publicista (Universidad del Mar). Si no se confirma, ocultar la sección. → sección 5, *Sección Formación*.
+- [ ] **ID real de Google Analytics** (hoy `G-XXXXXXXXXX`). → sección 5, *ID de Google Analytics*.
+- [ ] Conectar el dominio aquilespc.com en Netlify y dar de alta el sitio en Search Console. → secciones 4 y 6.
+- [ ] Pasar la página a Netlify conectando el repositorio de GitHub, y después apagar GitHub Pages. → secciones 2 y 3.
