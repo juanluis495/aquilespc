@@ -1,4 +1,4 @@
-# AquilesPC · aquilespc.com
+# AquilesPC · aquilespc.cl
 
 Página web de una sola página de **Aquiles Paredes Correa**, terapeuta en adicciones y codependencia. Su objetivo es que las personas escriban por WhatsApp para agendar una sesión.
 
@@ -27,26 +27,25 @@ Para editar cualquier archivo: clic derecho → **Abrir con** → **Bloc de nota
 
 Haz doble clic en `index.html`. Se abre en tu navegador tal como se verá publicada.
 
-Mientras la revisas en tu computador vas a ver unas **etiquetas amarillas** («Por definir», «Confirmar respaldo»…). Marcan lo que falta completar. En **aquilespc.com no aparecen**; ver la sección 5.
+Mientras la revisas en tu computador vas a ver unas **etiquetas amarillas** («Por definir», «Confirmar respaldo»…). Marcan lo que falta completar. En **aquilespc.cl no aparecen**; ver la sección 5.
 
 ---
 
-## 2. Dónde está publicada hoy: GitHub Pages (provisorio)
+## 2. Dónde está publicada
 
-Mientras se habilita Netlify y el dominio, la página está publicada en:
+- **Página oficial:** <https://aquilespc.cl>, en Netlify (proyecto `bejewelled-creponne-e350ad`).
+- **Repositorio (público):** <https://github.com/juanluis495/aquilespc>. Netlify está conectado a este repositorio: cada cambio que se sube se publica solo en aquilespc.cl en 1 o 2 minutos.
+- **Copia provisoria:** <https://juanluis495.github.io/aquilespc/> (GitHub Pages). Se usó mientras Netlify estaba en revisión. Cuando aquilespc.cl ya se vea públicamente, apágala para no tener dos copias: en el repositorio, **Settings → Pages → Unpublish site**.
 
-- **Página:** <https://juanluis495.github.io/aquilespc/>
-- **Repositorio (público):** <https://github.com/juanluis495/aquilespc>
+Las etiquetas amarillas de pendientes se ocultan en aquilespc.cl, pero **se ven** en las direcciones `.netlify.app` y `github.io`. Si vas a compartir una de esas, cambia `mostrarPendientes` a `'no'`; ver la sección 5.
 
-Cada cambio que se sube al repositorio se publica solo en esa dirección en 1 o 2 minutos. Ahí las etiquetas amarillas **sí se ven** (solo se ocultan en aquilespc.com). Si vas a compartir esa dirección con más personas, cambia `mostrarPendientes` a `'no'`; ver la sección 5.
-
-**Cambiar un texto sin instalar nada:** en el repositorio, abre el archivo (por ejemplo `index.html`), presiona el lápiz (**Edit this file**), haz el cambio y presiona **Commit changes**.
-
-**Al pasarla a Netlify:** usa la **opción B** de la sección 3 con este mismo repositorio. Cuando ya funcione en Netlify, apaga GitHub Pages para no tener dos copias: en el repositorio, **Settings → Pages → Unpublish site**.
+**Cambiar un texto sin instalar nada:** en el repositorio, abre el archivo (por ejemplo `index.html`), presiona el lápiz (**Edit this file**), haz el cambio y presiona **Commit changes**. En 1 o 2 minutos aparece en aquilespc.cl.
 
 ---
 
 ## 3. Publicar en Netlify
+
+Ya está hecho con la **opción B** (conectando el repositorio). Esto queda como referencia, por si algún día hay que armarlo de nuevo en otra cuenta.
 
 Netlify tiene un plan gratuito que alcanza de sobra para esta página. Crea una cuenta en <https://app.netlify.com/signup>.
 
@@ -71,43 +70,31 @@ Si la carpeta está en GitHub:
 
 ---
 
-## 4. Conectar el dominio aquilespc.com
+## 4. Dominio aquilespc.cl (NIC Chile)
 
-Un dominio .com se compra en un registrador (por ejemplo GoDaddy, Namecheap, Cloudflare o Hostinger; NIC Chile solo vende dominios .cl). El registrador guarda **a qué servidores DNS apunta tu dominio**, y los registros (A, CNAME, TXT) se crean en esos servidores. Lo más simple es que los maneje Netlify.
+Así quedó configurado (29 de octubre de 2026):
 
-> También puedes comprar el dominio directamente en Netlify (**Domain management → Add a domain → Register**). En ese caso no hay que configurar nada: queda conectado solo.
+- **Registro:** en [NIC Chile](https://www.nic.cl), a nombre de **Aquiles Paredes Correa**. Solo él puede entrar a modificarlo.
+- **Servidores de nombre (DNS):** los de Netlify:
+  ```
+  dns1.p03.nsone.net
+  dns2.p03.nsone.net
+  dns3.p03.nsone.net
+  dns4.p03.nsone.net
+  ```
+  Los registros del dominio (la dirección de la página, `www` y, más adelante, el TXT de Google) se administran en Netlify, en **Dominios → aquilespc.cl → DNS**, no en NIC Chile.
+- **`www.aquilespc.cl`** lleva automáticamente a `aquilespc.cl`, y `http://` lleva a `https://`.
+- **HTTPS (el candado):** certificado gratuito de Let's Encrypt que Netlify renueva solo.
 
-### Paso 1: agregar el dominio en Netlify
+**Importante:** el dominio hay que **renovarlo en NIC Chile** antes de su fecha de expiración. NIC Chile avisa al correo del titular. Si no se renueva, la página deja de verse en aquilespc.cl.
 
-1. En tu sitio de Netlify: **Domain management → Add a domain** → escribe `aquilespc.com` → **Verify** → **Add domain**.
-2. Netlify te ofrece **«Set up Netlify DNS»**. Acéptalo. Al final te muestra **4 servidores de nombre**, parecidos a estos (copia los tuyos, no estos):
-   ```
-   dns1.p01.nsone.net
-   dns2.p01.nsone.net
-   dns3.p01.nsone.net
-   dns4.p01.nsone.net
-   ```
+### Si algún día hay que volver a conectarlo
 
-### Paso 2: cambiar los servidores DNS en tu registrador
+1. En Netlify: **Gestión de dominios → Añadir dominio** → `aquilespc.cl` → acepta **«Configurar Netlify DNS»** y copia los 4 servidores de nombre que te muestre.
+2. Aquiles entra a nic.cl → **Mis dominios** → `aquilespc.cl` → modificar **Servidores de nombre**, borra los que haya y escribe los 4 de Netlify. Si pide dirección IP, se deja en blanco.
+3. Esperar entre unos minutos y unas horas. Netlify activa el HTTPS solo; se puede revisar en **Gestión de dominios → HTTPS**.
 
-1. Entra a la cuenta donde compraste el dominio → **Mis dominios** → `aquilespc.com`.
-2. Busca la opción de **servidores de nombre**, **nameservers** o **DNS personalizados** (cada registrador le pone un nombre distinto).
-3. Borra los que haya y escribe los 4 que te dio Netlify. Guarda.
-
-El cambio suele tardar entre unos minutos y unas horas (a veces hasta 24 h). Cuando Netlify detecta el dominio, activa **HTTPS** (el candado) solo y gratis. Revisa en **Domain management → HTTPS** que diga «Your site has HTTPS enabled».
-
-Netlify agrega automáticamente `www.aquilespc.com` y lo redirige a `aquilespc.com`.
-
-### Si prefieres mantener tus DNS actuales
-
-Si el dominio ya apunta a otro proveedor de DNS (por ejemplo, Cloudflare o un hosting), no cambies los servidores en el registrador. En ese proveedor crea:
-
-| Tipo  | Nombre | Valor |
-|-------|--------|-------|
-| A     | `@` (aquilespc.com) | `75.2.60.5` |
-| CNAME | `www` | `tu-sitio.netlify.app` (la dirección que te dio Netlify) |
-
-Netlify muestra estos valores en **Domain management** al agregar el dominio. Si alguno es distinto, usa el que te muestra Netlify.
+> Ojo: **aquiles.cl** (sin «pc») es de otra empresa. No se debe agregar en Netlify.
 
 ---
 
@@ -130,7 +117,7 @@ Cambia solo lo que está entre comillas simples `' '` y no borres las comas del 
 
 #### ID de Google Analytics
 
-1. En <https://analytics.google.com> crea una propiedad para aquilespc.com y un flujo de datos **Web**.
+1. En <https://analytics.google.com> crea una propiedad para aquilespc.cl y un flujo de datos **Web**.
 2. Copia el **ID de medición**, que empieza con `G-`.
 3. Pégalo en `analyticsId`, reemplazando `G-XXXXXXXXXX`.
 
@@ -165,7 +152,7 @@ En `js/main.js` → `whatsappMensaje`. Se escribe normal, con tildes y espacios.
 
 `mostrarPendientes` controla todas las etiquetas amarillas a la vez:
 
-- `'auto'` (como está ahora): se ven al revisar en tu computador o en la dirección `.netlify.app`, y **se ocultan en aquilespc.com**.
+- `'auto'` (como está ahora): se ven al revisar en tu computador o en la dirección `.netlify.app`, y **se ocultan en aquilespc.cl**.
 - `'no'`: no se ven nunca. Úsalo si vas a compartir la dirección `.netlify.app` antes de conectar el dominio.
 - `'si'`: se ven siempre.
 
@@ -226,12 +213,12 @@ En «Cómo reservar» (`index.html`) hay un comentario `<!-- AGENDA: … -->` qu
 Search Console te muestra cómo aparece la página en Google y con qué búsquedas llegan las personas.
 
 1. Entra a <https://search.google.com/search-console> con tu cuenta de Google → **Agregar propiedad**.
-2. Elige **Dominio** y escribe `aquilespc.com`.
+2. Elige **Dominio** y escribe `aquilespc.cl`.
 3. Google te da un registro **TXT** (empieza con `google-site-verification=`). Cópialo.
-4. En Netlify: **Domains → aquilespc.com → DNS settings → Add new record**: tipo **TXT**, nombre `@` (o vacío), valor: lo que copiaste. Guarda.
+4. En Netlify: **Domains → aquilespc.cl → DNS settings → Add new record**: tipo **TXT**, nombre `@` (o vacío), valor: lo que copiaste. Guarda.
 5. Vuelve a Search Console y presiona **Verificar** (si falla, espera unos minutos y reintenta).
 6. Ya verificado, ve a **Sitemaps** (menú izquierdo), escribe `sitemap.xml` y presiona **Enviar**.
-7. Opcional: en **Inspección de URLs** escribe `https://aquilespc.com/` y presiona **Solicitar indexación**.
+7. Opcional: en **Inspección de URLs** escribe `https://aquilespc.cl/` y presiona **Solicitar indexación**.
 
 Google puede tardar desde unos días hasta un par de semanas en mostrar la página en los resultados.
 
@@ -245,5 +232,7 @@ Google puede tardar desde unos días hasta un par de semanas en mostrar la pági
 - [ ] **Horario exacto** de atención. Por ahora solo dice «lunes a sábado». → sección 5, *Horario de atención*.
 - [ ] **Respaldo de la formación**: Técnico en Rehabilitación (IPLACEX, en curso) y Publicista (Universidad del Mar). Si no se confirma, ocultar la sección. → sección 5, *Sección Formación*.
 - [ ] **ID real de Google Analytics** (hoy `G-XXXXXXXXXX`). → sección 5, *ID de Google Analytics*.
-- [ ] Conectar el dominio aquilespc.com en Netlify y dar de alta el sitio en Search Console. → secciones 4 y 6.
-- [ ] Pasar la página a Netlify conectando el repositorio de GitHub, y después apagar GitHub Pages. → secciones 2 y 3.
+- [ ] **Hacer pública la página en Netlify.** Al 29 de octubre de 2026 aquilespc.cl todavía pide iniciar sesión en Netlify a los visitantes. Revisar en **Configuración del proyecto** la protección de visitantes (debe quedar sin protección).
+- [ ] **Apagar GitHub Pages** cuando aquilespc.cl ya se vea públicamente. → sección 2.
+- [ ] **Dar de alta el sitio en Google Search Console** y enviar el sitemap. → sección 6.
+- [x] Dominio aquilespc.cl conectado a Netlify, con HTTPS (29 de octubre de 2026).

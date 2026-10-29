@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://aquilespc.com/sitemap.xml
+Sitemap: https://aquilespc.cl/sitemap.xml
