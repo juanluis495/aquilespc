@@ -1,4 +1,4 @@
-# AquilesPC · aquilespc.cl
+# AquilesPC · aquilespc.com
 
 Página web de una sola página de **Aquiles Paredes Correa**, terapeuta en adicciones y codependencia. Su objetivo es que las personas escriban por WhatsApp para agendar una sesión.
 
@@ -27,7 +27,7 @@ Para editar cualquier archivo: clic derecho → **Abrir con** → **Bloc de nota
 
 Haz doble clic en `index.html`. Se abre en tu navegador tal como se verá publicada.
 
-Mientras la revisas en tu computador vas a ver unas **etiquetas amarillas** («Por definir», «Confirmar respaldo»…). Marcan lo que falta completar. En **aquilespc.cl no aparecen**; ver la sección 4.
+Mientras la revisas en tu computador vas a ver unas **etiquetas amarillas** («Por definir», «Confirmar respaldo»…). Marcan lo que falta completar. En **aquilespc.com no aparecen**; ver la sección 4.
 
 ---
 
@@ -56,13 +56,15 @@ Si la carpeta está en GitHub:
 
 ---
 
-## 3. Conectar el dominio aquilespc.cl (NIC Chile)
+## 3. Conectar el dominio aquilespc.com
 
-NIC Chile solo guarda **a qué servidores DNS apunta tu dominio**. Los registros (A, CNAME, TXT) se crean en esos servidores. Lo más simple es que los maneje Netlify.
+Un dominio .com se compra en un registrador (por ejemplo GoDaddy, Namecheap, Cloudflare o Hostinger; NIC Chile solo vende dominios .cl). El registrador guarda **a qué servidores DNS apunta tu dominio**, y los registros (A, CNAME, TXT) se crean en esos servidores. Lo más simple es que los maneje Netlify.
+
+> También puedes comprar el dominio directamente en Netlify (**Domain management → Add a domain → Register**). En ese caso no hay que configurar nada: queda conectado solo.
 
 ### Paso 1: agregar el dominio en Netlify
 
-1. En tu sitio de Netlify: **Domain management → Add a domain** → escribe `aquilespc.cl` → **Verify** → **Add domain**.
+1. En tu sitio de Netlify: **Domain management → Add a domain** → escribe `aquilespc.com` → **Verify** → **Add domain**.
 2. Netlify te ofrece **«Set up Netlify DNS»**. Acéptalo. Al final te muestra **4 servidores de nombre**, parecidos a estos (copia los tuyos, no estos):
    ```
    dns1.p01.nsone.net
@@ -71,23 +73,23 @@ NIC Chile solo guarda **a qué servidores DNS apunta tu dominio**. Los registros
    dns4.p01.nsone.net
    ```
 
-### Paso 2: cambiar los servidores DNS en NIC Chile
+### Paso 2: cambiar los servidores DNS en tu registrador
 
-1. Entra a <https://www.nic.cl> con tu cuenta → **Mis dominios** → `aquilespc.cl`.
-2. Busca **Modificar servidores de nombre (DNS)**.
+1. Entra a la cuenta donde compraste el dominio → **Mis dominios** → `aquilespc.com`.
+2. Busca la opción de **servidores de nombre**, **nameservers** o **DNS personalizados** (cada registrador le pone un nombre distinto).
 3. Borra los que haya y escribe los 4 que te dio Netlify. Guarda.
 
 El cambio suele tardar entre unos minutos y unas horas (a veces hasta 24 h). Cuando Netlify detecta el dominio, activa **HTTPS** (el candado) solo y gratis. Revisa en **Domain management → HTTPS** que diga «Your site has HTTPS enabled».
 
-Netlify agrega automáticamente `www.aquilespc.cl` y lo redirige a `aquilespc.cl`.
+Netlify agrega automáticamente `www.aquilespc.com` y lo redirige a `aquilespc.com`.
 
 ### Si prefieres mantener tus DNS actuales
 
-Si el dominio ya apunta a otro proveedor de DNS (por ejemplo, Cloudflare o un hosting), no cambies los servidores en NIC Chile. En ese proveedor crea:
+Si el dominio ya apunta a otro proveedor de DNS (por ejemplo, Cloudflare o un hosting), no cambies los servidores en el registrador. En ese proveedor crea:
 
 | Tipo  | Nombre | Valor |
 |-------|--------|-------|
-| A     | `@` (aquilespc.cl) | `75.2.60.5` |
+| A     | `@` (aquilespc.com) | `75.2.60.5` |
 | CNAME | `www` | `tu-sitio.netlify.app` (la dirección que te dio Netlify) |
 
 Netlify muestra estos valores en **Domain management** al agregar el dominio. Si alguno es distinto, usa el que te muestra Netlify.
@@ -113,7 +115,7 @@ Cambia solo lo que está entre comillas simples `' '` y no borres las comas del 
 
 #### ID de Google Analytics
 
-1. En <https://analytics.google.com> crea una propiedad para aquilespc.cl y un flujo de datos **Web**.
+1. En <https://analytics.google.com> crea una propiedad para aquilespc.com y un flujo de datos **Web**.
 2. Copia el **ID de medición**, que empieza con `G-`.
 3. Pégalo en `analyticsId`, reemplazando `G-XXXXXXXXXX`.
 
@@ -148,7 +150,7 @@ En `js/main.js` → `whatsappMensaje`. Se escribe normal, con tildes y espacios.
 
 `mostrarPendientes` controla todas las etiquetas amarillas a la vez:
 
-- `'auto'` (como está ahora): se ven al revisar en tu computador o en la dirección `.netlify.app`, y **se ocultan en aquilespc.cl**.
+- `'auto'` (como está ahora): se ven al revisar en tu computador o en la dirección `.netlify.app`, y **se ocultan en aquilespc.com**.
 - `'no'`: no se ven nunca. Úsalo si vas a compartir la dirección `.netlify.app` antes de conectar el dominio.
 - `'si'`: se ven siempre.
 
@@ -209,12 +211,12 @@ En «Cómo reservar» (`index.html`) hay un comentario `<!-- AGENDA: … -->` qu
 Search Console te muestra cómo aparece la página en Google y con qué búsquedas llegan las personas.
 
 1. Entra a <https://search.google.com/search-console> con tu cuenta de Google → **Agregar propiedad**.
-2. Elige **Dominio** y escribe `aquilespc.cl`.
+2. Elige **Dominio** y escribe `aquilespc.com`.
 3. Google te da un registro **TXT** (empieza con `google-site-verification=`). Cópialo.
-4. En Netlify: **Domains → aquilespc.cl → DNS settings → Add new record**: tipo **TXT**, nombre `@` (o vacío), valor: lo que copiaste. Guarda.
+4. En Netlify: **Domains → aquilespc.com → DNS settings → Add new record**: tipo **TXT**, nombre `@` (o vacío), valor: lo que copiaste. Guarda.
 5. Vuelve a Search Console y presiona **Verificar** (si falla, espera unos minutos y reintenta).
 6. Ya verificado, ve a **Sitemaps** (menú izquierdo), escribe `sitemap.xml` y presiona **Enviar**.
-7. Opcional: en **Inspección de URLs** escribe `https://aquilespc.cl/` y presiona **Solicitar indexación**.
+7. Opcional: en **Inspección de URLs** escribe `https://aquilespc.com/` y presiona **Solicitar indexación**.
 
 Google puede tardar desde unos días hasta un par de semanas en mostrar la página en los resultados.
 
@@ -228,4 +230,4 @@ Google puede tardar desde unos días hasta un par de semanas en mostrar la pági
 - [ ] **Horario exacto** de atención. Por ahora solo dice «lunes a sábado». → sección 4, *Horario de atención*.
 - [ ] **Respaldo de la formación**: Técnico en Rehabilitación (IPLACEX, en curso) y Publicista (Universidad del Mar). Si no se confirma, ocultar la sección. → sección 4, *Sección Formación*.
 - [ ] **ID real de Google Analytics** (hoy `G-XXXXXXXXXX`). → sección 4, *ID de Google Analytics*.
-- [ ] Conectar el dominio aquilespc.cl en Netlify y dar de alta el sitio en Search Console. → secciones 3 y 5.
+- [ ] Conectar el dominio aquilespc.com en Netlify y dar de alta el sitio en Search Console. → secciones 3 y 5.

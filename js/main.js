@@ -1,4 +1,4 @@
-/* AquilesPC · aquilespc.cl */
+/* AquilesPC · aquilespc.com */
 
 /* ===== AJUSTES ===== Lo que normalmente hay que cambiar está aquí (ver README.md). */
 var AJUSTES = {
@@ -12,7 +12,7 @@ var AJUSTES = {
   whatsappMensaje: 'Hola Aquiles, quiero agendar una sesión de orientación.',
 
   // Etiquetas amarillas de pendientes (.todo):
-  //   'auto' = se ven al revisar la página (en tu computador o en una vista previa) y se ocultan en aquilespc.cl
+  //   'auto' = se ven al revisar la página (en tu computador o en una vista previa) y se ocultan en aquilespc.com
   //   'si'   = se ven siempre
   //   'no'   = no se ven nunca
   mostrarPendientes: 'auto'
@@ -24,7 +24,7 @@ var AJUSTES = {
 
   var root = document.documentElement;
   var host = location.hostname.replace(/^www\./, '');
-  var esProduccion = host === 'aquilespc.cl';
+  var esProduccion = host === 'aquilespc.com';
   var esLocal = location.protocol === 'file:' || host === 'localhost' || host === '127.0.0.1' || host === '[::1]';
 
   // Pendientes
