@@ -1,0 +1,4 @@
+# Reglas de Netlify. El instructivo (README) es para quien administra la página,
+# no para los visitantes: en aquilespc.cl muestra la página «no encontrada».
+/README.md  /404.html  404!
+/readme.md  /404.html  404!

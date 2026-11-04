@@ -17,6 +17,8 @@ favicon.png           Ícono para Android y para Google
 apple-touch-icon.png  Ícono si alguien guarda la página en la pantalla de un iPhone
 robots.txt            Permite que Google revise el sitio
 sitemap.xml           Lista de páginas para Google
+README.md             Este instructivo (no se puede abrir desde aquilespc.cl)
+_redirects            Regla de Netlify que esconde este instructivo en aquilespc.cl
 ```
 
 Para editar cualquier archivo: clic derecho → **Abrir con** → **Bloc de notas** (o Visual Studio Code). Al guardar, deja la codificación en **UTF-8** para que las tildes y la ñ no se rompan.
