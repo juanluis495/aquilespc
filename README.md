@@ -35,9 +35,9 @@ Mientras la revisas en tu computador vas a ver unas **etiquetas amarillas** («P
 
 - **Página oficial:** <https://aquilespc.cl>, en Netlify (proyecto `bejewelled-creponne-e350ad`).
 - **Repositorio (público):** <https://github.com/juanluis495/aquilespc>. Netlify está conectado a este repositorio: cada cambio que se sube se publica solo en aquilespc.cl en 1 o 2 minutos.
-- **Copia provisoria:** <https://juanluis495.github.io/aquilespc/> (GitHub Pages). Se usó mientras Netlify estaba en revisión. Cuando aquilespc.cl ya se vea públicamente, apágala para no tener dos copias: en el repositorio, **Settings → Pages → Unpublish site**.
+- **Copia provisoria en GitHub Pages:** se usó mientras Netlify estaba en revisión y se apagó el 4 de noviembre de 2026, para no tener dos copias de la página. Si algún día hiciera falta otra vez: en el repositorio, **Settings → Pages**, rama `main` y carpeta `/ (root)`.
 
-Las etiquetas amarillas de pendientes se ocultan en aquilespc.cl, pero **se ven** en las direcciones `.netlify.app` y `github.io`. Si vas a compartir una de esas, cambia `mostrarPendientes` a `'no'`; ver la sección 5.
+Las etiquetas amarillas de pendientes se ocultan en aquilespc.cl, pero **se ven** en la dirección `.netlify.app` y en tu computador. Si vas a compartir la dirección `.netlify.app`, cambia `mostrarPendientes` a `'no'`; ver la sección 5.
 
 **Cambiar un texto sin instalar nada:** en el repositorio, abre el archivo (por ejemplo `index.html`), presiona el lápiz (**Edit this file**), haz el cambio y presiona **Commit changes**. En 1 o 2 minutos aparece en aquilespc.cl.
 
@@ -86,7 +86,7 @@ Así quedó configurado (29 de octubre de 2026):
 - **`www.aquilespc.cl`** lleva automáticamente a `aquilespc.cl`, y `http://` lleva a `https://`.
 - **HTTPS (el candado):** certificado gratuito de Let's Encrypt que Netlify renueva solo.
 
-**Importante:** el dominio hay que **renovarlo en NIC Chile** antes de su fecha de expiración. NIC Chile avisa al correo del titular. Si no se renueva, la página deja de verse en aquilespc.cl.
+**Importante:** el dominio hay que **renovarlo en NIC Chile** antes de su fecha de expiración, que hoy es el **15 de junio de 2028**. NIC Chile avisa al correo del titular. Si no se renueva, la página deja de verse en aquilespc.cl.
 
 ### Si algún día hay que volver a conectarlo
 
@@ -228,11 +228,27 @@ Google puede tardar desde unos días hasta un par de semanas en mostrar la pági
 
 ## 7. Pendientes
 
+La lista completa, para ir marcando lo que se termina, está en la **hoja de ruta**: <https://claude.ai/artifact/Uc7EiPXhaqbkbHSuEjaqUo>. Es privada: para que otra persona la vea, hay que compartirla desde el botón **Compartir** de esa página. Lo principal:
+
+**Lo que tiene que confirmar Aquiles**
+
 - [ ] **Valores** de la sesión de orientación y de los planes de adicciones y codependencia. Por ahora dice «Consulta el valor por WhatsApp». → sección 5, *Valores de las sesiones*.
 - [ ] **Horario exacto** de atención. Por ahora solo dice «lunes a sábado». → sección 5, *Horario de atención*.
 - [ ] **Respaldo de la formación**: Técnico en Rehabilitación (IPLACEX, en curso) y Publicista (Universidad del Mar). Si no se confirma, ocultar la sección. → sección 5, *Sección Formación*.
-- [ ] **ID real de Google Analytics** (hoy `G-XXXXXXXXXX`). → sección 5, *ID de Google Analytics*.
-- [ ] **Hacer pública la página en Netlify.** Al 29 de octubre de 2026 aquilespc.cl todavía pide iniciar sesión en Netlify a los visitantes. Revisar en **Configuración del proyecto** la protección de visitantes (debe quedar sin protección).
-- [ ] **Apagar GitHub Pages** cuando aquilespc.cl ya se vea públicamente. → sección 2.
+
+**Publicación y Google**
+
+- [ ] **Revisar la página en el celular** y en modo incógnito, probando los botones de WhatsApp, Instagram y TikTok.
+- [ ] **ID real de Google Analytics** (hoy `G-XXXXXXXXXX`), con la dimensión `link_id` y `contact_click` como evento clave. → sección 5, *ID de Google Analytics*.
 - [ ] **Dar de alta el sitio en Google Search Console** y enviar el sitemap. → sección 6.
+
+**Más adelante**
+
+- [ ] **Renovar el dominio** en NIC Chile antes del 15 de junio de 2028 (lo hace Aquiles). → sección 4.
+
+**Hecho**
+
+- [x] Página construida a partir del borrador aprobado (26 de octubre de 2026).
 - [x] Dominio aquilespc.cl conectado a Netlify, con HTTPS (29 de octubre de 2026).
+- [x] Página pública en aquilespc.cl, sin pedir inicio de sesión a los visitantes (4 de noviembre de 2026).
+- [x] Copia de GitHub Pages apagada (4 de noviembre de 2026).
