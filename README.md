@@ -176,7 +176,10 @@ Además, se cambia la respuesta de la pregunta frecuente y, para que Google tamb
 
 ### Horario de atención (`index.html`)
 
-Busca `PENDIENTE: horario`. Aparece en dos lugares: en la portada («Lunes a sábado») y en «Cómo reservar» («Horario: lunes a sábado.»). Al completarlo, borra también `<span class="todo">Confirmar horario exacto</span>`.
+Desde el 6 de noviembre de 2026 dice **full time** (antes decía «lunes a sábado»). Aparece en dos lugares; para cambiarlo, busca (Ctrl + F) estos textos:
+
+- En la portada: `Atención full time`
+- En «Cómo reservar»: `Horario de atención:`
 
 ### Sección Formación (`index.html`)
 
@@ -226,7 +229,6 @@ La lista completa, para ir marcando lo que se termina, está en la **hoja de rut
 
 **Lo que tiene que confirmar Aquiles**
 
-- [ ] **Horario exacto** de atención. Por ahora solo dice «lunes a sábado». → sección 5, *Horario de atención*.
 - [ ] **Respaldo de la formación**: Técnico en Rehabilitación (IPLACEX, en curso) y Publicista (Universidad del Mar). Si no se confirma, ocultar la sección. → sección 5, *Sección Formación*.
 
 **Publicación y Google**
@@ -246,3 +248,4 @@ La lista completa, para ir marcando lo que se termina, está en la **hoja de rut
 - [x] Página pública en aquilespc.cl, sin pedir inicio de sesión a los visitantes (4 de noviembre de 2026).
 - [x] Copia de GitHub Pages apagada (4 de noviembre de 2026).
 - [x] Valores: no se publican; las tarjetas muestran solo en qué consiste cada plan (6 de noviembre de 2026).
+- [x] Horario de atención: full time (6 de noviembre de 2026).
