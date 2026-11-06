@@ -11,7 +11,7 @@ index.html            La página (textos y estructura)
 404.html              Página que aparece si alguien entra a una dirección que no existe
 css/styles.css        Colores, letras y diseño
 js/main.js            AJUSTES (Analytics, WhatsApp, pendientes) y medición de clics
-img/                  Fotos y logos optimizados, en varios tamaños
+img/                  Fotos, logos e imagen para compartir, optimizados
 favicon.ico           Ícono de la pestaña del navegador
 favicon.png           Ícono para Android y para Google
 apple-touch-icon.png  Ícono si alguien guarda la página en la pantalla de un iPhone
@@ -208,7 +208,11 @@ Cuando se confirme el respaldo de un bloque, en `index.html` busca `Confirmar re
 
 > Un bloque oculto sigue escrito en `index.html`. Si nunca se va a mostrar, también se puede borrar de ahí su línea `<div data-cred="…">…</div>`.
 
-Para volver a mostrarla, borra la palabra `hidden`.
+### Imagen para compartir (`img/og-1200x630.jpg`)
+
+Es la imagen que aparece al compartir el enlace por WhatsApp, Facebook u otras redes. Mide 1200×630, el formato estándar de esas vistas previas, así que no se recorta. Se armó a partir del banner original: el banner completo al centro y el mismo fondo, desenfocado, arriba y abajo.
+
+Para cambiarla, súbela **con otro nombre** (por ejemplo `og-1200x630-v2.jpg`) y cambia ese nombre en los 3 lugares de `index.html` donde aparece `og-1200x630.jpg`. Con un nombre nuevo, WhatsApp y las redes no siguen usando la imagen guardada de antes. Ojo: los enlaces que ya se compartieron en un chat conservan la vista previa que tenían.
 
 ### Una agenda en línea más adelante
 
@@ -260,3 +264,4 @@ La lista completa, para ir marcando lo que se termina, está en la **hoja de rut
 - [x] Copia de GitHub Pages apagada (4 de noviembre de 2026).
 - [x] Valores: no se publican; las tarjetas muestran solo en qué consiste cada plan (6 de noviembre de 2026).
 - [x] Horario de atención: full time (6 de noviembre de 2026).
+- [x] Imagen para compartir de 1200×630 (6 de noviembre de 2026).
