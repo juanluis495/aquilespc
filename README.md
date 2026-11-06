@@ -111,7 +111,8 @@ var AJUSTES = {
   analyticsId: 'G-XXXXXXXXXX',
   whatsappNumero: '56934176783',
   whatsappMensaje: 'Hola Aquiles, quiero agendar una sesión de orientación.',
-  mostrarPendientes: 'auto'
+  mostrarPendientes: 'auto',
+  formacion: { rehabilitacion: true, otra: true, experiencia: true }
 };
 ```
 
@@ -183,19 +184,29 @@ Desde el 6 de noviembre de 2026 dice **full time** (antes decía «lunes a sába
 
 ### Sección Formación (`index.html`)
 
-Busca `PENDIENTE: respaldo`. Si se confirma la formación, borra las dos etiquetas `<span class="todo">Confirmar respaldo</span>`.
+La sección tiene tres bloques, en este orden:
 
-Si **no** se confirma, oculta la sección entera cambiando:
+| Bloque | Qué dice |
+|--------|----------|
+| `rehabilitacion` | **Formación en rehabilitación:** Técnico en Rehabilitación, IPLACEX (en curso). |
+| `otra` | **Otra formación:** Publicista con mención en Creatividad, Universidad del Mar. |
+| `experiencia` | **Experiencia de vida:** un año de tratamiento residencial. |
 
-```html
-<section id="formacion">
+**Para ocultar un bloque**, abre `js/main.js` y, en los AJUSTES, cambia su `true` por `false`:
+
+```js
+formacion: {
+  rehabilitacion: true,
+  otra: false,          // este bloque ya no se ve
+  experiencia: true
+}
 ```
 
-por:
+**Para ocultar la sección completa**, deja los tres en `false`: si no queda ningún bloque, la sección desaparece sola. La mención a publicista de «Quién soy» se mantiene igual.
 
-```html
-<section id="formacion" hidden>
-```
+Cuando se confirme el respaldo de un bloque, en `index.html` busca `Confirmar respaldo` y borra su etiqueta `<span class="todo">Confirmar respaldo</span>`.
+
+> Un bloque oculto sigue escrito en `index.html`. Si nunca se va a mostrar, también se puede borrar de ahí su línea `<div data-cred="…">…</div>`.
 
 Para volver a mostrarla, borra la palabra `hidden`.
 
@@ -229,7 +240,7 @@ La lista completa, para ir marcando lo que se termina, está en la **hoja de rut
 
 **Lo que tiene que confirmar Aquiles**
 
-- [ ] **Respaldo de la formación**: Técnico en Rehabilitación (IPLACEX, en curso) y Publicista (Universidad del Mar). Si no se confirma, ocultar la sección. → sección 5, *Sección Formación*.
+- [ ] **Respaldo de la formación**: Técnico en Rehabilitación (IPLACEX, en curso) y Publicista (Universidad del Mar). Lo que no se confirme se oculta, bloque por bloque. → sección 5, *Sección Formación*.
 
 **Publicación y Google**
 

@@ -140,7 +140,7 @@
 <body>
 <!--
   PENDIENTES (busca «PENDIENTE:» en este archivo para encontrar cada uno):
-  · Respaldo de la formación (IPLACEX y Universidad del Mar). Para ocultar esa sección, agrega «hidden» a <section id="formacion">.
+  · Respaldo de la formación (IPLACEX y Universidad del Mar). Cada bloque se oculta por separado en AJUSTES.formacion, en js/main.js.
   · ID de Google Analytics: en js/main.js.
   Las etiquetas amarillas (.todo) se muestran u ocultan con AJUSTES.mostrarPendientes en js/main.js.
 -->
@@ -294,15 +294,16 @@
     </div>
   </section>
 
-  <!-- PENDIENTE: respaldo de la formación. Si no se confirma, cambia <section id="formacion"> por <section id="formacion" hidden> -->
+  <!-- PENDIENTE: respaldo de la formación. Cada bloque (data-cred) se muestra u oculta en AJUSTES.formacion, en js/main.js.
+       Si los tres quedan ocultos, la sección completa se oculta sola. -->
   <section id="formacion">
     <div class="wrap read">
       <p class="eyebrow">Formación</p>
       <h2 style="margin-top:1rem">Estudio, experiencia y comunicación</h2>
       <div class="cred">
-        <div><b>En curso</b><p>Técnico en Rehabilitación, IPLACEX. <span class="todo">Confirmar respaldo</span></p></div>
-        <div><b>Título</b><p>Publicista con mención en Creatividad, Universidad del Mar. <span class="todo">Confirmar respaldo</span></p></div>
-        <div><b>Experiencia de vida</b><p>Un año de tratamiento residencial en un centro de rehabilitación. <span>Es parte de mi historia personal y la distingo de mi formación académica.</span></p></div>
+        <div data-cred="rehabilitacion"><b>Formación en rehabilitación</b><p>Técnico en Rehabilitación, IPLACEX (en curso). <span class="todo">Confirmar respaldo</span></p></div>
+        <div data-cred="otra"><b>Otra formación</b><p>Publicista con mención en Creatividad, Universidad del Mar. <span>Es la base de cómo comunico sobre recuperación en mis redes.</span> <span class="todo">Confirmar respaldo</span></p></div>
+        <div data-cred="experiencia"><b>Experiencia de vida</b><p>Un año de tratamiento residencial en un centro de rehabilitación. <span>Es parte de mi historia personal y la distingo de mi formación académica.</span></p></div>
       </div>
     </div>
   </section>

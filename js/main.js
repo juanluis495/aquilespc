@@ -15,7 +15,15 @@ var AJUSTES = {
   //   'auto' = se ven al revisar la página (en tu computador o en una vista previa) y se ocultan en aquilespc.cl
   //   'si'   = se ven siempre
   //   'no'   = no se ven nunca
-  mostrarPendientes: 'auto'
+  mostrarPendientes: 'auto',
+
+  // Sección «Formación»: cada bloque se muestra (true) o se oculta (false) por separado.
+  // Si los tres quedan en false, se oculta la sección completa.
+  formacion: {
+    rehabilitacion: true,  // Técnico en Rehabilitación, IPLACEX (en curso)
+    otra: true,            // Publicista, Universidad del Mar
+    experiencia: true      // Un año de tratamiento residencial
+  }
 };
 /* ===== FIN DE LOS AJUSTES ===== */
 
@@ -30,6 +38,18 @@ var AJUSTES = {
   // Pendientes
   var ver = AJUSTES.mostrarPendientes;
   if (ver === 'si' || (ver === 'auto' && !esProduccion)) root.classList.add('ver-pendientes');
+
+  // Formación: oculta los bloques que están en false en AJUSTES.formacion, y la sección si no queda ninguno.
+  var formacion = document.getElementById('formacion');
+  if (formacion) {
+    var quedan = 0;
+    Array.prototype.forEach.call(formacion.querySelectorAll('[data-cred]'), function (bloque) {
+      var mostrar = !AJUSTES.formacion || AJUSTES.formacion[bloque.getAttribute('data-cred')] !== false;
+      bloque.hidden = !mostrar;
+      if (mostrar) quedan++;
+    });
+    formacion.hidden = quedan === 0;
+  }
 
   // WhatsApp: todos los enlaces con data-whatsapp usan el número y el mensaje de AJUSTES.
   var wa = 'https://wa.me/' + AJUSTES.whatsappNumero + '?text=' + encodeURIComponent(AJUSTES.whatsappMensaje);

@@ -130,6 +130,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .cred b{font-family:var(--display);color:var(--pink-2)}
 .cred span{color:var(--muted);font-size:.9rem}
 @media (max-width:520px){.cred div{grid-template-columns:1fr;gap:.2rem}}
+.cred div[hidden],#formacion[hidden]{display:none}
 
 /* FAQ */
 .faq{background:var(--bg-2)}
