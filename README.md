@@ -160,27 +160,19 @@ En `js/main.js` → `whatsappMensaje`. Se escribe normal, con tildes y espacios.
 
 ### Valores de las sesiones (`index.html`)
 
-Busca `PENDIENTE: valor` (Ctrl + F). Aparece en las 3 tarjetas de Acompañamientos y en la pregunta frecuente del valor.
+Se decidió **no publicar los valores** (6 de noviembre de 2026). Las tarjetas de Acompañamientos muestran solo en qué consiste cada plan, y la pregunta frecuente «¿Cuánto vale una sesión?» invita a escribir por WhatsApp para recibirlos.
 
-**En cada tarjeta**, cambia esto:
-
-```html
-<dd>Consulta el valor por WhatsApp <span class="todo">Por definir</span></dd>
-```
-
-por el valor, borrando la etiqueta amarilla:
+Si algún día se quieren mostrar, en cada tarjeta se agrega esta fila al final de `<dl>…</dl>`:
 
 ```html
-<dd>$00.000</dd>
+<dt>Valor</dt><dd>$00.000</dd>
 ```
 
-**En la pregunta frecuente** «¿Cuánto vale una sesión?», reemplaza el texto de la respuesta y borra `<span class="todo">…</span>`. Luego, para que Google también la lea, agrégala al bloque `"@type": "FAQPage"` que está en el `<head>` de `index.html`, justo después de `"mainEntity": [`:
+Además, se cambia la respuesta de la pregunta frecuente y, para que Google también la lea, se agrega al bloque `"@type": "FAQPage"` del `<head>` de `index.html`, justo después de `"mainEntity": [`:
 
 ```json
 { "@type": "Question", "name": "¿Cuánto vale una sesión?", "acceptedAnswer": { "@type": "Answer", "text": "EL MISMO TEXTO DE LA RESPUESTA" } },
 ```
-
-(Por ahora esa pregunta no va en el bloque para Google, porque todavía no hay precio.)
 
 ### Horario de atención (`index.html`)
 
@@ -234,7 +226,6 @@ La lista completa, para ir marcando lo que se termina, está en la **hoja de rut
 
 **Lo que tiene que confirmar Aquiles**
 
-- [ ] **Valores** de la sesión de orientación y de los planes de adicciones y codependencia. Por ahora dice «Consulta el valor por WhatsApp». → sección 5, *Valores de las sesiones*.
 - [ ] **Horario exacto** de atención. Por ahora solo dice «lunes a sábado». → sección 5, *Horario de atención*.
 - [ ] **Respaldo de la formación**: Técnico en Rehabilitación (IPLACEX, en curso) y Publicista (Universidad del Mar). Si no se confirma, ocultar la sección. → sección 5, *Sección Formación*.
 
@@ -254,3 +245,4 @@ La lista completa, para ir marcando lo que se termina, está en la **hoja de rut
 - [x] Dominio aquilespc.cl conectado a Netlify, con HTTPS (29 de octubre de 2026).
 - [x] Página pública en aquilespc.cl, sin pedir inicio de sesión a los visitantes (4 de noviembre de 2026).
 - [x] Copia de GitHub Pages apagada (4 de noviembre de 2026).
+- [x] Valores: no se publican; las tarjetas muestran solo en qué consiste cada plan (6 de noviembre de 2026).
